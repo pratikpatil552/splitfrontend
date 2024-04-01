@@ -34,6 +34,7 @@ const RegisterandLogin = () => {
         }
         const {data} = await axios.post("/user/signup",obj);
         alert(data.status);
+        console.log(data.status);
     }
 
 
