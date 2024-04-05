@@ -1,6 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import RegisterandLogin from './components/RegisterandLogin';
+
+// all the routes
+import Home from './components/Home'
+import Signup from './components/Signup';
+import Signin from './components/Signin';
+
+import { Routes, Route } from "react-router-dom"
 import axios from 'axios';
 
 function App() {
@@ -8,7 +13,11 @@ function App() {
   axios.defaults.withCredentials = true;
   return (
     <div>
-      <RegisterandLogin/>
+      <Routes>
+        <Route path="/" element={ <Home/> } />
+        <Route path="/signup" element={ <Signup/> } />
+        <Route path="/signin" element={ <Signin/> } />
+      </Routes>
     </div>
   );
 }
