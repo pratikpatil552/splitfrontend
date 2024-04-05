@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from "react-router-dom";
+import { UserContext } from '../UserContext';
+import Uhome from './Uhome';
 
 const Home = () => {
-  return (
+  const {name,number,email} = useContext(UserContext);
+  console.log(name,number,email);
+  if(!name) return (
     <div className='bg-thdark h-screen flex items-center font-poppins'> 
       <div className='mx-auto'>
         <h1 className='text-thlight text-9xl font-normal animate-pulse'>Split💸</h1>
@@ -14,6 +18,9 @@ const Home = () => {
         </div>
       </div>
     </div>
+  )
+  else return(
+    <Uhome/>
   )
 }
 
