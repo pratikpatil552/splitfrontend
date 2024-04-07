@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { UserContext } from '../UserContext';
+import {useNavigate} from "react-router-dom"
 
 const Signup = () => {
     const [name, setname] = useState("");
@@ -10,6 +11,7 @@ const Signup = () => {
     const [otp, setotp] = useState("");
     const [isotp, setisotp] = useState(false);
     const {setname:setsname,setnumber:setsnumber,setemail:setsemail} = useContext(UserContext)
+    const navigate = useNavigate();
 
     async function handleOtp (event){
         event.preventDefault();
@@ -35,10 +37,12 @@ const Signup = () => {
         }
         const {data} = await axios.post("/user/signup",obj);
         alert(data.status);
+        console.log(name,email);
         if(data.status === "successfull registeration"){
             setsname(name);
             setsemail(email);
             setsnumber(number);
+            navigate("/");
         }
     }
 

@@ -1,13 +1,16 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { UserContext } from '../UserContext';
+import {useNavigate} from "react-router-dom"
+
 
 
 const Signin = () => {
     const [number, setnumber] = useState("");
     const [password, setpassword] = useState("");
     const {setname:setsname,setnumber:setsnumber,setemail:setsemail} = useContext(UserContext)
-
+    const navigate = useNavigate();
+    
     async function handlesubmit(event){
       event.preventDefault();
       console.log("this function has been called");
@@ -21,6 +24,7 @@ const Signin = () => {
         setsname(data.name);
         setsnumber(data.number);
         setsemail(data.email);
+        navigate("/");
       }
       else alert(data.status);
     }
