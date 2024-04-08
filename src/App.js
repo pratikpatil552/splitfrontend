@@ -9,6 +9,9 @@ import { UserContextProvider } from './UserContext';
 
 import { Routes, Route } from "react-router-dom"
 import axios from 'axios';
+import Creategroup from './components/Creategroup';
+import Groupinfo from './components/Groupinfo';
+
 
 function App() {
   axios.defaults.baseURL = "http://localhost:8000";
@@ -19,6 +22,8 @@ function App() {
         <Route path="/" element={ <Home/> } />
         <Route path="/signup" element={ <Signup/> } />
         <Route path="/signin" element={ <Signin/> } />
+        <Route path="/create" element={ <Creategroup/>} />
+        <Route path="/groupinfo" element={<Groupinfo/>} />
       </Routes>
     </UserContextProvider>
   );
