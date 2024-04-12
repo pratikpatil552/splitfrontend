@@ -23,7 +23,7 @@ function App() {
         <Route path="/signup" element={ <Signup/> } />
         <Route path="/signin" element={ <Signin/> } />
         <Route path="/create" element={ <Creategroup/>} />
-        <Route path="/groupinfo" element={<Groupinfo/>} />
+        <Route path="/group/:id" element={<Groupinfo/>} />
       </Routes>
     </UserContextProvider>
   );
