@@ -13,13 +13,11 @@ const Signin = () => {
     
     async function handlesubmit(event){
       event.preventDefault();
-      console.log("this function has been called");
       const obj ={
         number,
         password,
       }
       const {data} = await axios.post("/user/signin",obj);
-      console.log(data.status);
       if(data.status === "logged in successfully"){
         setsname(data.name);
         setsnumber(data.number);

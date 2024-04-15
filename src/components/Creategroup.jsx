@@ -11,12 +11,10 @@ const Creategroup = () => {
 
   async function handlesubmit(event){
     event.preventDefault();
-    console.log("this function has been called");
     const obj ={
         name:groupname,
     }
     const {data} = await axios.post(`/group/${number}`,obj);
-    console.log(data.status);
     if(data.status === "successfully created"){
         alert("created successfully");
     }

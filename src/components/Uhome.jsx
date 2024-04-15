@@ -51,7 +51,7 @@ const Uhome = () => {
             ownergroup.map((item)=>(<Group obj = {item} isowner = {true}/>))
           }
           {
-            !ownergroup.length && (<p className='text-thmedlight text-lg'>You are not created any group</p>)
+            !ownergroup.length && (<p className='text-thmedlight text-lg'>You have not created any group</p>)
           }
           </div>
 

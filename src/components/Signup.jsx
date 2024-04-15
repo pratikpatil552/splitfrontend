@@ -37,7 +37,6 @@ const Signup = () => {
         }
         const {data} = await axios.post("/user/signup",obj);
         alert(data.status);
-        console.log(name,email);
         if(data.status === "successfull registeration"){
             setsname(name);
             setsemail(email);

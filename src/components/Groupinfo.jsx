@@ -22,7 +22,6 @@ const Groupinfo= () => {
 
   async function handlesubmit (event) {
     event.preventDefault();
-    console.log("this function has been called");
     const obj ={
       number:newnumber,
     }
@@ -38,7 +37,6 @@ const Groupinfo= () => {
 
   async function handlesubmit1 (event) {
     event.preventDefault();
-    console.log("this function has been called");
     const obj ={
       to:num1,
       from:num2,
@@ -82,14 +80,14 @@ const Groupinfo= () => {
               </div>
             <div className='bg-thlight w-full p-3 rounded-lg my-3'>
               <p className='my-3 font-semibold text-2xl'>Members</p>
-              <div className='flex gap-3'>
+              <div className='lg:flex gap-3'>
                 {
-                  groupdata.members.map((item)=>(<p className='bg-thdark px-3 py-2 rounded-full text-lg font-medium text-thlight'><i class="fa-solid fa-user"></i> {item.number}</p>))
+                  groupdata.members.map((item)=>(<p className='bg-thdark px-3 py-2 rounded-full text-lg font-medium text-thlight my-3'><i class="fa-solid fa-user"></i> {item.number}</p>))
                 }
               </div>
             </div>
             <div>
-              <form className='flex items-center mt-5'>
+              <form className='lg:flex items-center mt-5'>
                       <input
                         value={num1}  
                         onChange={ev=>setnum1(ev.target.value)}
@@ -120,8 +118,8 @@ const Groupinfo= () => {
                   groupdata.transactions.map((item)=>
                   (<div className='flex p-1 justify-between'>
                     <div className='flex'>
-                      <p className='bg-red-400 py-2 px-3 rounded-full  text-red-800 font-medium'><i class="fa-solid fa-user"></i> {item.to.number}</p>
-                      <p className='bg-green-400 py-2 px-3 rounded-full mx-2 text-green-800 font-medium'><i class="fa-solid fa-user"></i> {item.from.number}</p>
+                      <p className='bg-red-400 py-2 px-3 rounded-full  text-red-800 font-medium'><i class="fa-solid fa-user"></i> {item.from.number}</p>
+                      <p className='bg-green-400 py-2 px-3 rounded-full mx-2 text-green-800 font-medium'><i class="fa-solid fa-user"></i> {item.to.number}</p>
                       <p className='py-2 px-3 bg-blue-300 text-blue-800 font-medium rounded-full'>${item.amount}</p>
                     </div>
                     <p className='py-2 px-3 lg:visible invisible bg-orange-300 text-orange-900 rounded-full font-medium'>added by {item.addedby.number}</p>

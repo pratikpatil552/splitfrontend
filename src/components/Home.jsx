@@ -5,7 +5,6 @@ import Uhome from './Uhome';
 
 const Home = () => {
   const {name,number,email} = useContext(UserContext);
-  console.log(name,number,email);
   if(!name) return (
     <div className='bg-thdark h-screen flex items-center font-poppins'> 
       <div className='mx-auto'>
